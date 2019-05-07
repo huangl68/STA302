@@ -1,0 +1,97 @@
+---
+title: "RLab1"
+author: "Cedric Beaulac"
+date: "April 23, 2019"
+output: beamer_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(comment=NA)
+```
+
+# Install R
+
+## Clean way to work
+
+- Set up a working directory
+
+```{r include=TRUE}
+setwd("C:/R/STA302")
+```
+
+- Make sure your data sets are in your working directory.
+
+- You might want to have one directory per lab (project)
+
+# Install package
+
+## Google is your friend
+
+- I will say this a lot.
+- Let's try to see if a packaged contains our permutation rank test.
+
+```{r include=TRUE}
+#install.packages("exactRankTests")
+library("exactRankTests")
+x <- c(48,56,58)
+y <- c(44,46,51)
+```
+
+---
+
+## Help function
+
+- Add ? after a function name to access help
+- Google is your friend (again)
+
+---
+
+```{r include=TRUE}
+perm.test(x,y)
+```
+
+---
+
+## Help function
+
+- Well that's not the 0.1 we expected!
+- Use the help function again!
+
+---
+
+```{r include=TRUE}
+perm.test(x,y,alternative='greater')
+```
+
+---
+
+## Generating data set
+
+- It is common in statistics and computer sciences to generate random data set to test our algorithms.
+- It is easy to generate variable from multiple distribution in R.
+- To generate a categorical variable use the \textit{sample} function.
+
+---
+
+```{r include=TRUE}
+?sample
+x1 = sample(seq(1:6),3,replace=TRUE)
+x2 = sample(seq(1:6),3,replace=TRUE)
+x1
+x2
+perm.test(x1,x2,alternative='greater')
+```
+
+## Generating data set
+
+- The function \textif{rnorm} can be used for normal variable. 
+- I invite you to google other populare distributions.
+
+---
+
+```{r include=TRUE}
+#Write code down!
+#Nothing was prepared in advance: THIS IS DANGEROUS!
+#A prof taking risks!
+```
